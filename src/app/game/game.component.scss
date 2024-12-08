@@ -47,3 +47,17 @@
   position: absolute;
   right: 0px;
 }
+
+.btn-add{
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  background-color: rgb(35, 35, 138);
+  position: absolute;
+  right: 32px;
+  bottom: 32px;
+  font-size: 60px;
+  &:hover{
+    cursor: pointer;
+  }
+}
