@@ -65,6 +65,7 @@ export class GameComponent {
       dialogRef.afterClosed().subscribe(result => {
         console.log('The dialog was closed');
         if (result !== undefined) {
+          console.log('das result ist ' + result);
           
         }
       });
