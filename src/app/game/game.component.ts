@@ -32,6 +32,7 @@ export class GameComponent {
 
   constructor(public dialog: MatDialog){
     this.newGame();
+    
   }
 
   newGame(){
@@ -45,7 +46,7 @@ export class GameComponent {
       this.currentCard = this.game.stack.pop();
       this.pickCardAnimation = true;
 
-      console.log(this.game);
+      console.log(this.game.currentPlayer);
       console.log(this.game.playedCards);
       
       setTimeout(() => {
@@ -53,6 +54,7 @@ export class GameComponent {
           this.game.playedCards.push(this.currentCard);  
         }
         this.pickCardAnimation = false;
+        console.log('Is current player active? ', 0 === this.game.currentPlayer);
       }, 1000);
     }      
     }
@@ -64,6 +66,7 @@ export class GameComponent {
   
       dialogRef.afterClosed().subscribe(name => {
         this.game.players.push(name)
+        
       });
     }
 }
