@@ -38,24 +38,17 @@ export class GameComponent {
 
   newGame(){
     this.game = new Game ();
-    console.log(this.game);
-    
   }
 
   takeCard(){
     if (!this.pickCardAnimation) {
       this.currentCard = this.game.stack.pop();
       this.pickCardAnimation = true;
-
-      console.log(this.game.currentPlayer);
-      console.log(this.game.playedCards);
-      
       setTimeout(() => {
         if (this.currentCard) {
           this.game.playedCards.push(this.currentCard);  
         }
         this.pickCardAnimation = false;
-        console.log('Is current player active? ', 0 === this.game.currentPlayer);
       }, 1000);
     }      
     }
