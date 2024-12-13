@@ -21,7 +21,13 @@ import { GameInfoComponent } from '../game-info/game-info.component';
 @Component({
   selector: 'app-game',
   standalone: true,
-  imports: [CommonModule, PlayerComponent, MatIconModule, MatButtonModule, DialogAddPlayerComponent, MatDialogModule, GameInfoComponent],
+  imports: [CommonModule, 
+    PlayerComponent, 
+    MatIconModule, 
+    MatButtonModule, 
+    DialogAddPlayerComponent, 
+    MatDialogModule, 
+    GameInfoComponent],
   templateUrl: './game.component.html',
   styleUrl: './game.component.scss'
 })
@@ -44,6 +50,8 @@ export class GameComponent {
     if (!this.pickCardAnimation) {
       this.currentCard = this.game.stack.pop();
       this.pickCardAnimation = true;
+      this.game.currentPlayer ++;
+      this.game.currentPlayer = this.game.currentPlayer % this.game.players.length;
       setTimeout(() => {
         if (this.currentCard) {
           this.game.playedCards.push(this.currentCard);  
