@@ -76,6 +76,10 @@ export class GameInfoComponent implements OnChanges{
       let cardNumber = +this.card.split('_')[1];
       this.title = this.cardAction[cardNumber - 1].title;  
       this.description = this.cardAction[cardNumber - 1].description;  
+    }else{
+      this.title = 'Plase pick a card';
+      this.description = 'Please click on the card stack to select the next card'
+
     }
     
   }
