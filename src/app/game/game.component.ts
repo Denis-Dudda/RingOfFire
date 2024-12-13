@@ -4,15 +4,7 @@ import { Game } from '../../models/game';
 import { PlayerComponent } from '../player/player.component';
 import { MatIconModule } from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
-import {
-  MAT_DIALOG_DATA,
-  MatDialog,
-  MatDialogActions,
-  MatDialogClose,
-  MatDialogContent,
-  MatDialogRef,
-  MatDialogTitle,
-} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { DialogAddPlayerComponent } from '../dialog-add-player/dialog-add-player.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { GameInfoComponent } from '../game-info/game-info.component';
@@ -24,8 +16,7 @@ import { GameInfoComponent } from '../game-info/game-info.component';
   imports: [CommonModule, 
     PlayerComponent, 
     MatIconModule, 
-    MatButtonModule, 
-    DialogAddPlayerComponent, 
+    MatButtonModule,  
     MatDialogModule, 
     GameInfoComponent],
   templateUrl: './game.component.html',
